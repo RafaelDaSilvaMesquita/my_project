@@ -1,0 +1,37 @@
+<html>
+<head>
+  <link href="style.css" rel="stylesheet" media="all">
+  <meta name="author" content="Stephane Brunet" />
+  <link rel="icon" type="image/svg+xml" href="php.svg">
+  <meta charset="utf-8">
+  <title>PHP-2-post</title>
+</head>
+<body>
+<header>
+    <div><h1>PHP-2-formulaire</h1></div>
+    <nav>
+  		<a href="7-recupfile!.php">7 recup file</a>
+      <a href="8-formlogin.html"> 8 login</a>
+      <a href="9-recupsecure.php">9 recup secure</a>
+    </nav>
+</header>
+<article>
+
+<h3>Formulaire simple</h3>
+ <form name="form1" method="post" action="9-recupsecure.php" >
+ <p>
+   <label>Login
+     <input type="text" name="login" required maxlength="50" />
+    </label>
+  </p>
+  <p>
+   <label>PWD
+     <input type="password" name="pass" required maxlength="50" />
+   </label>
+  </p>
+  <input type="submit" name="Submit" value="Ok" />
+ </form>
+</article>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+https://phpenthusiast.com/blog/how-to-use-packagist-and-composer

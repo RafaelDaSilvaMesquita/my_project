@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contacts>
+	<personne>
+		<nom>Anakin Skywalker</nom>
+		<type>Chevalier</type>
+	</personne>
+
+	<personne>
+		<nom>Jabba the Huntt</nom>
+		<type>Méchant</type>
+	</personne>
+
+	<personne>
+		<nom>Lando Calrissian</nom>
+		<type>Ami</type>
+	</personne>
+
+	<personne>
+		<nom>Chewbacca</nom>
+		<type>Grosse boule de poil</type>
+	</personne>
+
+	<personne>
+		<nom>Boba Fett </nom>
+		<type>Chasseur de primes</type>
+	</personne>
+
+	<personne>
+		<nom>Padmé Amidala </nom>
+		<type>Imperatrice</type>
+	</personne>
+
+</contacts>

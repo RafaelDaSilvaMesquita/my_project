@@ -1,0 +1,65 @@
+
+<html>
+<head>
+<link href="style.css" rel="stylesheet" media="all">
+<meta name="author" content="Stephane Brunet" />
+<link rel="icon" type="image/svg+xml" href="php.svg">
+<meta charset="utf-8">
+<title>PHP-2-post</title>
+</head>
+<body>
+<header>
+    <div><h1>PHP-2-formulaire</h1></div>
+    <nav>
+        <a href="5-recup.php">5 recup </a>
+		<a href="6-file.html">6 upload file</a>
+        <a href="7-recupfile!.php"> 7 recup file</a>
+    </nav>
+
+</header>
+<article>
+
+<h3>Formulaire avec fichier</h3>
+<form enctype="multipart/form-data" action="7-recupfile!.php"
+method ="post">
+<input type="file" name="photo" id="photo" accept="image/*" />
+<input type="submit" id="go" />
+</form>
+
+<ul id="file-list">
+	<li class="no-items">Il n'y a pas encore de fichiers sélectionnés</li>
+</ul>
+
+</article>
+
+</body>
+<script>
+	 //<![CDATA[
+	(function () {
+		var filesUpload = document.querySelector("#photo");
+		var fileList = document.querySelector("#file-list");
+			function traverseFiles(files) {
+				var li;
+				var file;
+				var fileInfo;
+				fileList.innerHTML = "";
+				for (var i=0, il=files.length; i<il; i++) {
+					li = document.createElement("li");
+					file = files[i];
+					fileInfo = "<div><b>Nom :</b> " + file.name + "</div>";
+					fileInfo += "<div><b>Taille :</b> " + file.size + " bytes</div>";
+					fileInfo += "<div><b>Type :</b> " + file.type + "</div>";
+					li.innerHTML = fileInfo;
+					fileList.appendChild(li);
+					};
+			};
+			filesUpload.onchange = function () {
+				traverseFiles(this.files);
+        if (this.files[0]['size']>9999) {
+          document.querySelector("#go").disabled = true;
+        }
+			};
+	})();
+		// ]]>
+</script>
+</html>

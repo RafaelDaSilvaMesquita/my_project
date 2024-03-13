@@ -1,0 +1,39 @@
+
+<html>
+  <head>
+    <link href="style.css" rel="stylesheet" media="all">
+    <meta name="author" content="Stephane Brunet" />
+    <link rel="icon" type="image/svg+xml" href="php.svg">
+    <title>PHP-2-post</title>
+    <meta charset="utf-8">
+  </head>
+<body>
+<header>
+    <div><h1>PHP-2-formulaire</h1></div>
+    <nav>
+        <a href="2-getsecure!.php">2 get secure </a>
+		    <a href="3-getsecureII!.php">3 get secure II</a>
+        <a href="1-get.php"> Get </a>
+    </nav>
+
+</header>
+<article>
+
+<h3>Formulaire simple</h3>
+ <form name="form1" method="post" action="5-recup.php">
+   <p>
+     <label for="nom">Nom </label>
+     <input type="text" name="nom" id="nom" required autofocus
+     placeholder="votre nom" maxlength="120" />
+   </p>
+   <p>
+     <label for="age">Age </label>
+     <input type="number" name="age" id="age" required placeholder="votre age" 
+     step="1" max="99" min="18" />
+   </p>
+   <input type="submit" name="Submit" value="Ok" />
+
+ </form>
+</article>
+</body>
+</html>

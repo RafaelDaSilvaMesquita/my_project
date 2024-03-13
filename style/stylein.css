@@ -1,0 +1,54 @@
+html{
+    --margeint: 1em;
+}
+
+
+body {
+  background-color: #f5f5f5;
+  background-image: url(../images/medical-background.webp);
+  background-size: cover;
+  padding: 3em;
+}
+
+
+.titre{
+  position: sticky;
+  top: 0;
+  background-color: rgba(0 0 0 / 30%);
+}
+.row{
+  margin-top: 10vh;
+}
+
+.card {
+  box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
+}
+
+.width-90 {
+  width: 90px!important;
+}
+.rounded-3 {
+  border-radius: 0.5rem !important;
+}
+
+a {
+text-decoration:none;    
+}
+body header{
+    position: sticky;
+    top:0;
+    background-color: rgba(0 0 0 / 30%);
+    padding: var(--margeint);
+}
+article{
+    background-color: #f5f5f5;
+    padding: var(--margeint);}
+
+.rdv{
+    color :blueviolet;
+    font-style: italic;
+    & span{
+        color :cornflowerblue;
+        font-style:normal;
+    }
+}

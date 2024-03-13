@@ -1,0 +1,32 @@
+[
+	{
+		"cityId":0,
+		"countryId":1,
+		"cityName":"Bordeaux",
+		"cityLongitude":"-0.576144",
+		"cityLatitude":"44.8373682"},
+	{
+		"cityId":1,
+		"countryId":2,
+		"cityName":"Le Havre",
+		"cityLongitude":"0.1065027",
+		"cityLatitude":"49.4925909"},
+	{
+		"cityId":2,
+		"countryId":3,
+		"cityName":"Bruxelles",
+		"cityLongitude":"4.3528",
+		"cityLatitude":"50.8466"},
+	{
+		"cityId":3,
+		"countryId":4,
+		"cityName":"Saint Jean Pied de Port",
+		"cityLongitude":"-1.2333",
+		"cityLatitude":"43.1667"},
+	{
+		"cityId":4,
+		"countryId":5,
+		"cityName":"Pau",
+		"cityLongitude":"-0.3667",
+		"cityLatitude":"43.3"}
+]

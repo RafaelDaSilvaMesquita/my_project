@@ -1,0 +1,15 @@
+<svg id="svg34" width="256px" height="181px" preserveAspectRatio="xMidYMid" version="1.1" viewBox="0 0 256 181" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<style>
+  @media screen and (max-width:50em) {
+  		.jaune {
+  						fill: DarkTurquoise;
+  			 }
+        }
+</style>
+ <polygon class="jaune" points="0 0 45.176 0 105.41 90.297 45.176 180.59 0 180.59 60.235 90.297" fill="#ff0"/>
+ <polygon id="polygon28" points="60.235 0 105.41 0 225.88 180.59 180.71 180.59 143.06 124.16 105.41 180.59 60.235 180.59 120.47 90.297" fill="#5e5086"/>
+ <path id="path30" d="m205.8 127.92-20.078-30.101h70.275v30.103h-50.196zm-30.118-45.145-20.078-30.101h100.39v30.101z" fill="#8f4e8b"/>
+ <text transform="scale(1 1)" x="147.79996" y="52.700672" font-family="sans-serif" font-size="45px" style="line-height:1.25" xml:space="preserve">
+   <tspan id="tspan45" x="147.79996" y="52.700672" fill="#ff00ff" font-family="'Bauhaus 93'" stroke-width="1.1454"><?php echo $texte; ?></tspan>
+ </text>
+</svg>

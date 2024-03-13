@@ -1,0 +1,33 @@
+<html>
+<head>
+<link href="style.css" rel="stylesheet" media="all">
+<meta name="author" content="Stephane Brunet" />
+<meta charset="utf-8">
+<title>PHP-2-post</title>
+</head>
+<body>
+<header>
+    <div><h1>PHP-2-BDD</h1></div>
+    <nav>
+
+    </nav>
+
+</header>
+<article>
+
+<h3>Nouveau film</h3>
+ <form name="form1" method="post" action="6-ttx-film.php">
+   <p><label for="titre">Titre</label>
+   <input type="text" name="titre" id="titre" required autofocus
+   placeholder="Titre film" maxlength="120" /></p>
+   <p><label for="annee">Ann&eacute;e sortie</label>
+   <input type="number" name="annee" id="annee" required  max="2023" min="1970" />
+  </p>
+   <input type="submit" name="Submit" value="Ok" />
+
+ </form>
+
+</article>
+
+</body>
+</html>

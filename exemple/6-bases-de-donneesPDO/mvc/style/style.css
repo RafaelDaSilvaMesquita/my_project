@@ -1,0 +1,29 @@
+
+@import url('https://fonts.googleapis.com/css?family=Gruppo|Plaster|Julee');
+
+h1 {
+  font-family: 'Gruppo', cursive;
+  background-color:DarkCyan;
+  color:white;
+}
+
+h3 {
+  font-family: 'Plaster', cursive;
+}
+h3 mark {
+  font-family: 'Gruppo', cursive;
+  background-color: teal;
+}
+a{
+  font-family: 'Julee', cursive;
+  color:DarkCyan;
+
+}
+a:hover{
+  font-family: 'Gruppo', cursive;
+  background-color:DarkCyan;
+  color:white;
+}
+.listfilm{
+  min-height: 4em;
+}
