@@ -63,6 +63,7 @@ crossorigin="anonymous">
               <option value="chirurgien">chirurgien</option>
               <option value="cardiologue">cardiologue</option>
               <option value="orthopediste">orthopediste</option>
+              <option value="urgentiste">urgentiste</option>
             </select>
           </div>
         </div>

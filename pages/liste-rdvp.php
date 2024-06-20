@@ -21,7 +21,7 @@ $resultats=$bdd->query($requete); //associer la requête au paramètres de conne
 <meta charset="UTF-8">
 
 <link rel="icon" type="image/svg+xml" href="php.svg">
-<title>PHP-5-base de donn&eacute;es</title>
+<title>Liste rendez-vous</title>
 
 
 <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
@@ -66,8 +66,8 @@ while( $donnees = $resultats->fetch(PDO::FETCH_OBJ))
 //var_dump($donnees);
   {
     echo '<p class="rdv">';
-    echo $donnees->date1.' - date sortie : '.$donnees->date2.'<br />'."\n";
-    echo '<span>'.$donnees->lieu.' - commentaire : '.$donnees->message.'</span><br />'."\n";
+    echo $donnees->date1.' - horaire de sortie : '.$donnees->date2.'<br />'."\n";
+    echo '<span>'.$donnees->lieu.' - message : '.$donnees->message.'</span><br />'."\n";
     //afficher en image le statut
     if($donnees->statut==1) {
       echo '<svg width="16" height="16" fill="green" class="bi bi-check" viewBox="0 0 16 16">';
