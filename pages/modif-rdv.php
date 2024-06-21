@@ -68,6 +68,7 @@ crossorigin="anonymous">
                 <div class="col-1">
                     <input type="submit" name="Submit" value="Ok" 
                     class="btn btn-primary btn-lg btn-block"/>
+                    <input type="hidden" name="id" value="<?php echo $id; ?>" />
                 </div>
             </div>
         </form>

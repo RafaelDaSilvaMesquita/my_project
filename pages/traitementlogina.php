@@ -19,7 +19,8 @@ $resultats = $bdd->query($sql);
 
 // On charge les données issues de la requête
 // dans des variables
-print_r($donnees);
+//print_r($donnees);
+if ($donnees) {
         $logindb=$donnees->login;//login de la base de données
         $pwddb=$donnees->mdp;
         $admin_id=$donnees->admin_id;
@@ -29,10 +30,16 @@ print_r($donnees);
           session_start();
           $_SESSION['admin_id']=$admin_id ;
             header('Location: liste-admin.php');
+            exit();//ajout dernière modif
         }
             else {
            header('Location: ../index-a.php?error=error');
+           exit();//ajout dernière modif
             }
+          } else {
+            header('Location: ../index-a.php?error=error');
+            exit();
+        }
     }
 
 

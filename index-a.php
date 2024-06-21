@@ -24,6 +24,11 @@
           font-size: 3.5rem;
         }
       }
+
+      .error {
+        color: red;
+        margin-top: 10px;
+      }
     </style>
 
 
@@ -57,6 +62,12 @@
    <input type="password" name="password" id="password" required autofocus
    placeholder="Password admin" maxlength="50" class="form-control"/></p>
    <label for="password">Password</label></div>
+
+   <?php
+        if (isset($_GET['error']) && $_GET['error'] === 'error') {
+            echo '<div class="error">Mot de passe incorrect</div>';
+        }
+        ?>
 
    <input class="w-100 btn btn-lg btn-primary" type="submit" name="Submit" value="Ok" />
 

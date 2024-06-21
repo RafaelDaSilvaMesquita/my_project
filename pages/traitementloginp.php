@@ -18,7 +18,8 @@ $resultats = $bdd->query($sql);
 
 // On charge les données issues de la requête
 // dans des variables
-print_r($donnees); //débuguage 
+//print_r($donnees); //débuguage
+if ($donnees) { 
         $logindb=$donnees->login;//login de la base de données
         $pwddb=$donnees->mdp;
         $patient_id=$donnees->patient_id;
@@ -29,10 +30,16 @@ print_r($donnees); //débuguage
           session_start(); //si tout s'est bien passé j'ouvre une session
           $_SESSION['patient_id']=$patient_id ; //et je stock l'id du patient en session
             header('Location: fiche_patient.php');
+            exit();//ajout dernière modif
         }
             else {
-           header('Location: ../index.php?error=error');
-            }
+           header('Location: ../index-p.php?error=error');
+           exit();//ajout dernière modif
+          }
+        } else {
+          header('Location: ../index-p.php?error=error');
+          exit();
+      }
     }
 
 

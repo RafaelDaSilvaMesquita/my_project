@@ -18,7 +18,8 @@ $resultats = $bdd->query($sql);
 
 // On charge les données issues de la requête
 // dans des variables
-print_r($donnees);
+//print_r($donnees);
+if ($donnees) { 
         $logindb=$donnees->login;//login de la base de données
         $pwddb=$donnees->mdp;
         $medecin_id=$donnees->medecin_id;
@@ -28,11 +29,17 @@ print_r($donnees);
           session_start();
           $_SESSION['medecin_id']=$medecin_id ;
             header('Location: liste-rdvm.php');
+            exit();//ajout dernière modif
         }
             else {
-           header('Location: ../index.php?error=error');
+           header('Location: ../index-m.php?error=error');
+           exit();//ajout dernière modif
             }
-    }
+          }  else {
+              header('Location: ../index-m.php?error=error');
+              exit();
+          }
+    } 
 
 
 
