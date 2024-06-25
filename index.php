@@ -10,8 +10,27 @@
     <script src="script/main.js" defer></script>
     <title>Page d'accueil</title>
     <!-- Ajoute éventuellement des liens vers des fichiers de style (CSS) ici -->
+
+    <style>
+        /* Ajout de la classe pour le menu déroulant */
+        .dropdown-wrapper {
+            width: 200px; /* Ajuste cette valeur selon tes besoins */
+            margin: 0 auto; /* Centrer le menu déroulant */
+        }
+
+        .dropdown-btn {
+            width: 100%;
+            text-align: left; /* Assurer que le texte est aligné à gauche */
+            padding: 10px; /* Ajouter du padding pour améliorer l'apparence */
+            border: 1px solid #ccc; /* Ajouter une bordure */
+            border-radius: 4px; /* Ajouter des coins arrondis */
+            background-color: #fff; /* Couleur de fond */
+            cursor: pointer; /* Curseur de la souris */
+        }
+    </style>
+
 </head>
-<body>
+<body class="text-center">
 
 <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -32,7 +51,17 @@
     }
 ?>
 
+<main class="form-signin">
+    <header>
+        <div>
+            <h1 class="h3 mb-3 fw-normal">Bienvenue à l'hôpital des Lumières</h1>
+        </div>
+        <nav>
 
+      </nav>
+      <br />
+    </header>
+    <article>
     <div class="dropdown-wrapper">
         <div class="dropdown-btn" id="selected-item">Sélection du rôle
             <span><i class="fa-solid fa-caret-down"></i></span>
@@ -65,6 +94,8 @@
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <!-- Le formulaire est maintenant caché et soumis via JavaScript -->
     </form>
+</article>
+</main>
 
     
 <!--<form action="<?php //echo $_SERVER['PHP_SELF']; ?>" method="post">

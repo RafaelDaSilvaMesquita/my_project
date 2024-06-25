@@ -43,6 +43,15 @@ else
 
 include("../connexion.php");
 
+
+// Validation de l'email
+if ($email != "Email inconnu" && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+  $_SESSION['error_message'] = "Adresse e-mail invalide.";
+  header('Location: fiche_patient.php');
+  exit();
+}
+
+
 if($email!="Email inconnu"){
 
   $sql = "UPDATE patient SET  adresse='$adresse', code_postal='$code_postal', ville='$ville', numero_telephone='$numero_telephone', email='$email', texte_medecin='$texte_medecin'

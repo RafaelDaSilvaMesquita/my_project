@@ -96,6 +96,10 @@ crossorigin="anonymous">
                   <label for="email" class="form-label">Email</label>
                   <input type="text" name="email" id="email" class="form-control" autofocus
                   maxlength="120" value="<?php echo $donnees->email; ?>">
+                  <!--Validation de l'email-->
+                  <?php if (!empty($error_message)): ?>
+                     <div class="text-danger"><?php echo $error_message; ?></div>
+                  <?php endif; ?>
                </div>
             </div>
          

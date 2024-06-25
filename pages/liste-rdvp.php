@@ -6,14 +6,36 @@ session_start();
 //récupérer la valeur de l'id du patient stocké en session
 $id=$_SESSION['patient_id'];
 
+try {
+  // Requête pour vérifier si le patient a un médecin attitré
+  $requeteMedecin = "SELECT medecin_id FROM patientmedecin WHERE patient_id = :id";
+  $stmtMedecin = $bdd->prepare($requeteMedecin);
+  $stmtMedecin->bindParam(':id', $id, PDO::PARAM_INT);
+  $stmtMedecin->execute();
+  $medecin = $stmtMedecin->fetch(PDO::FETCH_OBJ);
+  
+  // Vérifier si un médecin est trouvé pour le patient
+  $hasMedecin = $medecin !== false;
+
 //requête croisé pour aller chercher les caractéristiques du rdv patient et le nom/prenom du medecin
 $requete = "SELECT date1, date2, lieu, message, rendezvous.statut ,medecin.nom, medecin.prenom 
 FROM rendezvous
 JOIN medecin ON rendezvous.medecin_id=medecin.medecin_id
 WHERE patient_id = $id 
 ORDER BY date1 DESC";
-$resultats=$bdd->query($requete); //associer la requête au paramètres de connexion
+//$resultats=$bdd->query($requete); //associer la requête au paramètres de connexion
 //echo $requete;
+$stmt = $bdd->prepare($requete);
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    if ($stmt === false) {
+        throw new Exception('Erreur lors de la requête pour récupérer les rendez-vous.');
+    }
+} catch (Exception $e) {
+    echo 'Erreur : ' . $e->getMessage();
+    die();
+}
 ?>
 
 <html>
@@ -55,14 +77,18 @@ $resultats=$bdd->query($requete); //associer la requête au paramètres de conne
 <header>
     <h1>Liste rendez-vous</h1>
     <nav>
+      <?php if ($hasMedecin): ?>
         <a href="new-rdvp.php">Nouveau rendez-vous</a>
+      <?php else: ?>
+        <p style="color: red;">Vous n'avez pas de médecin attitré. Veuillez contacter l'administration pour en obtenir un.</p>
+      <?php endif; ?>
     </nav>
 </header>
 
 <article>
 <?php
 // afficher les résultats de la requête dans un objet "données"
-while( $donnees = $resultats->fetch(PDO::FETCH_OBJ))
+while( $donnees = $stmt->fetch(PDO::FETCH_OBJ))//remplacer à la place de $resultats
 //var_dump($donnees);
   {
     echo '<p class="rdv">';
@@ -86,7 +112,8 @@ while( $donnees = $resultats->fetch(PDO::FETCH_OBJ))
     }
     echo '</p>';
   }
-$resultats->closeCursor(); //libérer le serveur mysql
+//$resultats->closeCursor(); //libérer le serveur mysql
+$stmt->closeCursor();
 ?>
 
 
